@@ -1,0 +1,28 @@
+{
+  "name": "curso-profesional-javascript",
+  "version": "1.0.0",
+  "description": "este es un proyecto para el curso profesional de javasacript de la escuela de desarrollo web",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghalliard/Curso-profesional-javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "profesional",
+    "angular",
+    "npm"
+  ],
+  "author": "gabriel montoya <gabrielmontoyahuamani26@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghalliard/Curso-profesional-javascript/issues"
+  },
+  "homepage": "https://github.com/ghalliard/Curso-profesional-javascript#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

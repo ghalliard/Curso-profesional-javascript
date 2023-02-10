@@ -1,0 +1,8 @@
+# video demostrativo
+assets/video/videoPrueba.mp4
+
+#modulos 
+node_modules
+
+#package
+package-lock.json
