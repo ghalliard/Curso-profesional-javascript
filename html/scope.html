@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scope</title>
+    </head>
+    <body>
+        <header>
+            <h1>CLASE 5: SCOPE</h1>
+        </header>
+        <script>
+            var message = 'Hello world!';
+            
+            function eventuallyPrintNumber(n){
+                setTimeout(() =>{
+                    console.log(n);
+                }, 100);
+            }
+
+            function printNumbers(){
+                var i;
+                for(i = 0; i < 10; i++){
+                    eventuallyPrintNumber(i);
+                }
+            }
+            printNumbers();
+
+            function printNumbers2(){
+                for(let i = 0; i < 10; i++){
+                    setTimeout(() =>{
+                        console.log('funcion<2', i);
+                    }, 100);
+                }
+            }
+            printNumbers2();
+        </script>
+    </body>
+</html>

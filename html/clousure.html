@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clousure</title>
+    </head>
+    <body>
+        <script>
+            (function(){
+                let color = 'green';
+
+                function printColor(){
+                    console.log(color);
+                }
+
+                printColor();
+            })();
+
+            // funcion que retorna una funcion
+            const makeColorPrinter = (color) =>{
+                let colorMessage = `The color is ${color}`;
+
+                return function(){
+                    console.log(colorMessage);
+                }
+            }
+
+            let greenColorPrinter = makeColorPrinter('RED');
+            greenColorPrinter();
+
+            // variables privadas
+            function makeCounter(n){
+                let count = n;
+
+                return {
+                    increase: function(num){
+                        count += num; 
+                    },
+                    decrease: function(num){
+                        count -= num;
+                    },
+                    getCount: function(){
+                        return count; 
+                    }
+                }
+            }
+            let counter = makeCounter(10);
+
+        </script>
+    </body>
+</html>
