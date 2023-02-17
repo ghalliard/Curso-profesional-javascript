@@ -23,6 +23,29 @@
             }
             console.log('this en una function strict mode', whoIsThis());
 
+            //this dentro de un objeto
+            const person = {
+                name: 'Gabriel',
+                saludar: function(){
+                    console.log(`Hola, soy ${this.name}`);
+                }
+            };
+            person.saludar();
+
+            //this cuando sacamos un metodo del objeto.
+            const accion = person.saludar;
+            accion();
+
+            // this en una clase
+            function Person(name){
+                this.name = name;
+            }
+            Person.prototype.saludar = function(){
+                console.log(`Hola, me llamo ${this.name}`);
+            }
+            const gabriel = new Person('Gabriel Montoya');
+            gabriel.saludar();
+
         </script>
     </body>
 </html>
