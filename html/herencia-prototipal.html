@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Hero(name){
+                this.name = name;
+            }
+
+            Hero.prototype.saludar = function(){
+                console.log(`NEW: Hola, SOY UN SUPERHEROE ${this.name}`);
+            }
+
+            const flash = new Hero('flash');
+
+            // Propiedades de la instancia
+            console.log('name', flash.name);
+
+            // Propiedades de la clase
+            console.log('saludar (fnc):', flash.saludar);
+
+            // propiedades heredadas
+            console.log('to string', flash.toString);
+
+            // hasOwnProperty
+            console.log('usando has own property (name)', flash.hasOwnProperty('name'));
+            console.log('usando has own property (saludar)', flash.hasOwnProperty('saludar'));
+
+        </script>
+    </body>
+</html>

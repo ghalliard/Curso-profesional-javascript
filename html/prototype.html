@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>prototype</title>
+    </head>
+    <body>
+        <script>
+
+            // un objeto comun y corriente
+            const link = {
+                name: "Link",
+            };
+            link.saludar = function(){
+                console.log(`Hola, soy ${this.name}`);
+            }
+            link.saludar();
+
+            // mas eficiente 
+            function Hero(name){
+                const hero = {
+                    name: name,
+                };
+                hero.saludar = function(){
+                    console.log(`Hola, soy ${this.name}`);
+                }
+                return hero;
+            }
+
+            const link2 = Hero('LINK VERSION 2');
+            link2.saludar();
+
+            // aun se puede ser mas eficiente. 
+            const heroMethods = {
+                saludar: function(){
+                    console.log(`Hola, me llamo ${this.name}`);
+                }
+            };
+            
+            function Hero2(name){
+                const hero = {
+                    name: name,
+                };
+                hero.saludar = heroMethods.saludar;
+
+                return hero;
+            }
+            const spiderman = Hero2('Peter Parker');
+            spiderman.saludar();
+            
+            // Object.create
+            function Hero3(name){
+                const hero = Object.create(heroMethods);
+                hero.name = name;
+
+                return hero;
+            }
+            const superman = Hero3('Superman');
+            superman.saludar();
+
+            // los metodos de hero dentro de HERO
+            function Hero4(name){
+                const hero = Object.create(Hero4.prototype);
+                hero.name = name;
+
+                return hero;
+            }
+
+            Hero4.prototype.saludar = function(){
+                console.log(`Hola, me llamo ${this.name}`);
+            }
+            const aquaman = Hero4('Aquaman');
+            aquaman.saludar();
+
+            // con el NEW
+            function Hero5(name){
+                //const hero = Object.create(Hero5.prototype);
+                this.name = name;
+                //return hero;
+            }
+
+            Hero5.prototype.saludar = function(){
+                console.log(`NEW: Hola, SOY UN SUPERHEROE ${this.name}`);
+            }
+            const flash = new Hero5('flash');
+            flash.saludar();
+            
+        </script>
+    </body>
+</html>
