@@ -8,7 +8,7 @@ const play_btn = document.querySelector('.play-btn');
 const player = new MediaPlayer({
     prop_video: video,
     plugins: [
-        //new AutoPlay
+        new AutoPlay
     ],
 });
 console.log(player);
