@@ -7,6 +7,7 @@ function MediaPlayer(obj){
 
 MediaPlayer.prototype._initPlugins = function(){
     const player = {
+        // este this hace referencia a MediaPlayer, no a player.
         play: () => this.avanzar(),
         pause: () => this.pausar(),
         media: this.media,
@@ -19,7 +20,7 @@ MediaPlayer.prototype._initPlugins = function(){
     };
 
     this.plugins.forEach(plugin => {
-        plugin.run(this);
+        plugin.run(player);
     });
 }
 
