@@ -29,7 +29,6 @@ function handlerIntersection_fnc(entries){
     else{
         this.player.play();
     }
-    console.log(entry);
 }
 
 export default AutoPause;

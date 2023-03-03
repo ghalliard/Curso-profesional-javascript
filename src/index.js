@@ -15,6 +15,11 @@ const player = new MediaPlayer({
 });
 console.log(player);
 
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('../sw.js')
+    .catch(err => console.log(err.message));
+}
+
 mute_btn.onclick = () =>{
     if(player.media.muted){
         player.unmute();
