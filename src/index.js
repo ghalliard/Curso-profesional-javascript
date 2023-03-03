@@ -15,9 +15,36 @@ const player = new MediaPlayer({
 });
 console.log(player);
 
+/*
+//Esta es una forma de registrar tu service worker
+
+// con este if podemos validar si es que el service worker esta disponible en el navegador. 
 if('serviceWorker' in navigator){
     navigator.serviceWorker.register('../sw.js')
-    .catch(err => console.log(err.message));
+        .then(registration => console.log('el registro del SW esta hecho', registration))
+        .catch(err => console.log(err.message));
+}
+*/
+
+// ahora con async y await
+const registerServiceWorker = async () =>{
+    if('serviceWorker' in navigator){
+        try{
+            const registration = await navigator.serviceWorker.register('../sw.js', {
+                scope: './',
+            });
+            console.log(registration);
+            if(registration.installing){
+                console.log('Service Worker installing');
+            } else if(registration.waiting){
+                console.log('Service Worker installed');
+            } else if(registration.active){
+                console.log("Service worker active");
+            }
+        } catch(err){
+            console.error('el registro fallo con error ' + err);
+        }
+    } 
 }
 
 mute_btn.onclick = () =>{
@@ -35,3 +62,5 @@ play_btn.onclick = () =>{
         player.pausar();
     }
 }
+
+registerServiceWorker();
