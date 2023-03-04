@@ -63,7 +63,7 @@ const suma = myfnc(5, 8);
 console.log(suma);
 
 // una funcion que regresa otra funcion
-function createAdder(a: number): (number) => number{
+function createAdder(a: number): (b: number) => number{
     return function(b: number){
         return a + b;
     }
@@ -78,7 +78,7 @@ function fullName(firstName: string, lastName: string = ''){
     return `${firstName} ${lastName}`;
 }
 const person = fullName('Gabriel', 'Montoya');
-const person1 = fullName('richi');
+const person1 = fullName('richi', undefined);
 console.log(person1);
 console.log(person);
 
