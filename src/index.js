@@ -1,6 +1,6 @@
 import MediaPlayer from './video-mediaPlayer.js';
 import AutoPlay from './plugins/AutoPlay.js';
-import AutoPause from './plugins/AutoPause.js';
+import AutoPause from '../typescript/AutoPause.ts';
 
 const video = document.querySelector('.video');
 const mute_btn = document.querySelector('.mute-btn');
@@ -47,6 +47,7 @@ const registerServiceWorker = async () =>{
     } 
 }
 
+
 mute_btn.onclick = () =>{
     if(player.media.muted){
         player.unmute();
@@ -63,4 +64,4 @@ play_btn.onclick = () =>{
     }
 }
 
-registerServiceWorker();
+// registerServiceWorker();

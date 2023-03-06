@@ -4,7 +4,7 @@
   "description": "este es un proyecto para el curso profesional de javasacript de la escuela de desarrollo web",
   "main": "index.js",
   "scripts": {
-    "start": "parcel html/typescript/index.html"
+    "start": "parcel html/video.html"
   },
   "repository": {
     "type": "git",
