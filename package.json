@@ -4,7 +4,7 @@
   "description": "este es un proyecto para el curso profesional de javasacript de la escuela de desarrollo web",
   "main": "index.js",
   "scripts": {
-    "start": "parcel singleton/index.html"
+    "start": "parcel singleton/decorator.html"
   },
   "repository": {
     "type": "git",

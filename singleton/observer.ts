@@ -1,3 +1,4 @@
+// el observer recibe actualizaciones de la información 
 interface Observer{
     update: (data: any) => void,
 };
@@ -9,12 +10,12 @@ interface Subject{
 
 class BitcoinPrice implements Subject{
     observers: Array<Observer> = [];
-    private el: HTMLInputElement;
+    //private el: HTMLInputElement;
     constructor(){
-        //const el:HTMLInputElement = document.getElementById('value') as HTMLInputElement;
-        this.el = document.getElementById('value') as HTMLInputElement;
-        this.el.addEventListener('input', () =>{
-            this.notify(this.el.value);
+        const el: HTMLInputElement = document.getElementById('value') as HTMLInputElement; // este es una referencia a ese elemento, al input.
+        //this.el = document.getElementById('value') as HTMLInputElement;
+        el.addEventListener('input', () =>{
+            this.notify(el.value);
         });
     }
 
@@ -48,6 +49,8 @@ class PriceDisplay implements Observer{
 const value = new BitcoinPrice();
 console.log(value);
 const display = new PriceDisplay();
+
+//aqui el display va a estar suscrito a todos los cambios que va a estar anunciando notificando el input 
 
 value.subscribe(display);
 
